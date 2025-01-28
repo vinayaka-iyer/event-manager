@@ -8,27 +8,28 @@ import PricingPage from "@/pages/PricingPage";
 import React from "react";
 import { BrowserRouter as Router, Routes, Route } from "react-router-dom";
 import Navbar from "./components/layout/Navbar";
+import CreateEventPage from "./pages/CreateEventPage";
 
 function App() {
   return (
     <>
       <Provider store={store}>
         <Router>
-        <Navbar />
+          <Navbar />
           <Routes>
-              {/* protected routes examples */}
-              {/* <Route element={<RequireAuth />}>
+            {/* protected routes examples */}
+            {/* <Route element={<RequireAuth />}>
                   <Route path="/tasks" element={<TasksPage />} />
                   <Route path="/tasks/create" element={<CreateTaskPage />} />
                   </Route> */}
 
-              {/* public routes */}
-              <Route path="/login" element={<LoginPage />} />
-              <Route path="/register" element={<RegisterPage />} />
-              <Route path="/solutions" element={<SolutionsPage />} />
-              <Route path="/pricing" element={<PricingPage />} />
-              <Route path="/" element={<HomePage />}>
-            </Route>
+            {/* public routes */}
+            <Route path="/login" element={<LoginPage />} />
+            <Route path="/register" element={<RegisterPage />} />
+            <Route path="/solutions" element={<SolutionsPage />} />
+            <Route path="/pricing" element={<PricingPage />} />
+            <Route path="/create" element={<CreateEventPage />} />
+            <Route path="/" element={<HomePage />}></Route>
           </Routes>
         </Router>
       </Provider>
