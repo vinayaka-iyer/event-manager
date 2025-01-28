@@ -4,8 +4,6 @@ import store from "./stores/store";
 import React from "react";
 import RoutesComponent from "./routes/Routes";
 
-
-
 function App() {
   return (
     <>
