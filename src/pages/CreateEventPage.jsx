@@ -1,10 +1,11 @@
 import React from "react";
 import CreateEventForm from "../components/CreateEventForm";
+import Page1 from "@/components/Page1";
 
 const CreateEventPage = () => {
   return (
     <div>
-      <CreateEventForm />
+      <Page1 />
     </div>
   );
 };

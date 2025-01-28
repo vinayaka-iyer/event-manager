@@ -1,11 +1,10 @@
-import { CheckCircle } from "lucide-react"; // Importing Lucide Icon
-import { Card } from "@/components/ui/card"; // Optional: ShadCN Card Component
+import { CheckCircle } from "lucide-react";
+import { Card } from "@/components/ui/card";
 
 function GuestList({ guestNames }) {
   return (
-    <div className="flex justify-center ml-4">
-      {/* Optional: Use ShadCN's Card component */}
-      <Card className="max-w-md shadow-lg bg-white rounded-lg overflow-hidden">
+    <div className="flex justify-center ml-4 md:w-1/6 mt-10">
+      <Card className="shadow-lg bg-white rounded-lg overflow-hidden w-full">
         <div className="p-4">
           <h3 className="text-xl font-semibold text-gray-800 mb-4">
             Guest List
