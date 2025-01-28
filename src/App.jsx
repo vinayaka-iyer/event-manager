@@ -8,13 +8,13 @@ import PricingPage from "@/pages/PricingPage";
 import React from "react";
 import { BrowserRouter as Router, Routes, Route } from "react-router-dom";
 import Navbar from "./components/layout/Navbar";
+import LandingPage from "./pages/LandingPage";
 
 function App() {
   return (
     <>
       <Provider store={store}>
         <Router>
-        <Navbar />
           <Routes>
               {/* protected routes examples */}
               {/* <Route element={<RequireAuth />}>
@@ -27,7 +27,7 @@ function App() {
               <Route path="/register" element={<RegisterPage />} />
               <Route path="/solutions" element={<SolutionsPage />} />
               <Route path="/pricing" element={<PricingPage />} />
-              <Route path="/" element={<HomePage />}>
+              <Route path="/" element={<LandingPage />}>
             </Route>
           </Routes>
         </Router>
