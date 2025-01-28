@@ -1,7 +1,6 @@
 import Background from "@/components/ui/Background";
 import "./LandingPage.css";
 import { Button } from "@/components/ui/button";
-import Navbar from "@/components/layout/Navbar";
 
 const LandingPage = () => {
 
@@ -11,7 +10,6 @@ const LandingPage = () => {
 
     return (
         <>
-            <Navbar />
             <Background>
                 <div className="landing-page-content">
                     <h1 className="landing-page-headline">
