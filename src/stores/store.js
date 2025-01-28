@@ -1,15 +1,17 @@
-import { configureStore } from '@reduxjs/toolkit';
-import authReducer from '../services/auth/authSlice';
-import { apiSlice } from '../services/apiSlice';
+import { configureStore } from "@reduxjs/toolkit";
+import authReducer from "../services/auth/authSlice";
+import { apiSlice } from "../services/apiSlice";
+import formReducer from "../services/formSlice";
 
 const store = configureStore({
   reducer: {
     [apiSlice.reducerPath]: apiSlice.reducer,
     auth: authReducer, // Register the auth slice
+    form: formReducer,
   },
-  middleware: getDefaultMiddleware =>
+  middleware: (getDefaultMiddleware) =>
     getDefaultMiddleware().concat(apiSlice.middleware),
-  devTools: true
+  devTools: true,
 });
 
 export default store;

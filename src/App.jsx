@@ -9,6 +9,9 @@ import React from "react";
 import { BrowserRouter as Router, Routes, Route } from "react-router-dom";
 import Navbar from "./components/layout/Navbar";
 import CreateEventPage from "./pages/CreateEventPage";
+import Page1 from "./components/Page1";
+import Page2 from "./components/Page2";
+import Summary from "./components/Summary";
 
 function App() {
   return (
@@ -29,6 +32,11 @@ function App() {
             <Route path="/solutions" element={<SolutionsPage />} />
             <Route path="/pricing" element={<PricingPage />} />
             <Route path="/create" element={<CreateEventPage />} />
+
+            <Route path="/page1" element={<Page1 />} />
+            <Route path="/page2" element={<Page2 />} />
+            <Route path="/summary" element={<Summary />} />
+
             <Route path="/" element={<HomePage />}></Route>
           </Routes>
         </Router>
