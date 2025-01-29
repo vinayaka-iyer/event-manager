@@ -1,6 +1,7 @@
 import { createSlice } from "@reduxjs/toolkit";
 
 const initialState = {
+  forms: [],
   formData: {},
 };
 
@@ -14,8 +15,12 @@ const formSlice = createSlice({
     resetFormData: (state) => {
       state.formData = {};
     },
+    addEvent: (state,action) =>{
+      state.forms.append(action.payload);
+    }
   },
 });
 
-export const { updateFormData, resetFormData } = formSlice.actions;
+export const { updateFormData, resetFormData, addEvent } = formSlice.actions;
+export const selectAllEvents = (state) => state.form.forms;
 export default formSlice.reducer;
