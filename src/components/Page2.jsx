@@ -31,11 +31,13 @@ import { updateFormData } from "../services/formSlice";
 import GuestList from "./GuestList";
 
 const formSchema = z.object({
-  guest_names: z.array(z.string()).nonempty("Please at least one item"),
-  guests_emails: z.array(z.string()).nonempty("Please at least one item"),
-  notify: z.unknown(),
+  guest_names: z
+    .array(z.string())
+    .nonempty("Please include at least one guest"),
+  guests_emails: z.array(z.string().email()).optional("Invalid email format"),
+  notify: z.boolean(),
   files: z.any().optional(),
-  rsvp: z.string(),
+  rsvp: z.enum(["yes", "no"], "Please select the mode of the event"),
   message: z.string().optional(),
 });
 
@@ -144,7 +146,7 @@ const Page2 = () => {
                       setFiles={(newFiles) => field.onChange(newFiles)} // Update form state on file change
                     />
                   </FormControl>
-                  <FormDescription>Select a file to upload.</FormDescription>
+                  {/* <FormDescription>Select a file to upload.</FormDescription> */}
                   <FormMessage />
                 </FormItem>
               )}
@@ -166,13 +168,8 @@ const Page2 = () => {
                       </SelectTrigger>
                     </FormControl>
                     <SelectContent>
-                      <SelectItem value="m@example.com">
-                        m@example.com
-                      </SelectItem>
-                      <SelectItem value="m@google.com">m@google.com</SelectItem>
-                      <SelectItem value="m@support.com">
-                        m@support.com
-                      </SelectItem>
+                      <SelectItem value="yes">Yes - RSVP required</SelectItem>
+                      <SelectItem value="no">No - RSVP not required</SelectItem>
                     </SelectContent>
                   </Select>
 
