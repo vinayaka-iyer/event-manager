@@ -1,4 +1,4 @@
-import { BrowserRouter as Router, Routes, Route } from "react-router-dom";
+import { BrowserRouter as Router, Routes, Route, useLocation } from "react-router-dom";
 import HomePage from "@/pages/HomePage";
 import LoginPage from "@/pages/LoginPage";
 import RegisterPage from "@/pages/RegisterPage";
@@ -13,19 +13,20 @@ import CreateEventPage from "@/pages/CreateEventPage";
 import Page2 from "@/components/Page2";
 import Summary from "@/components/Summary";
 
-const RoutesComponent = () => {
-  const user = useSelector(selectCurrentUser);
-  return (
-    <Router>
-      <Navbar />
-      <Routes>
-        {/* protected routes examples */}
-        {/* <Route element={<RequireAuth />}>
-                  <Route path="/tasks" element={<TasksPage />} />
-                  <Route path="/tasks/create" element={<CreateTaskPage />} />
-                  </Route> */}
+const AppRoutes = () => {
+  const location = useLocation(); // Get current route
 
-        {/* public routes */}
+  // Conditionally render Navbar based on route
+  const hideNavbarRoutes = ["/login", "/register"];
+  const shouldShowNavbar = !hideNavbarRoutes.includes(location.pathname);
+
+  const user = useSelector(selectCurrentUser);
+
+  return (
+    <>
+      {shouldShowNavbar && <Navbar />}
+      <Routes>
+        {/* Public routes */}
         <Route path="/login" element={<LoginPage />} />
         <Route path="/register" element={<RegisterPage />} />
         <Route path="/solutions" element={<SolutionsPage />} />
@@ -34,10 +35,18 @@ const RoutesComponent = () => {
         <Route path="/page2" element={<Page2 />} />
         <Route path="/summary" element={<Summary />} />
 
-        <Route path="/" element={user ? <HomePage /> : <LandingPage />}>
-          <Route path="/landing" element={<LandingPage />} />
-        </Route>
+        {/* Conditional home route */}
+        <Route path="/" element={user ? <HomePage /> : <LandingPage />} />
+        <Route path="/landing" element={<LandingPage />} />
       </Routes>
+    </>
+  );
+};
+
+const RoutesComponent = () => {
+  return (
+    <Router>
+      <AppRoutes /> {/* This ensures useLocation() is inside Router */}
     </Router>
   );
 };

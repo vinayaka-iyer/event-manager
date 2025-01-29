@@ -36,7 +36,7 @@ import { logout, selectCurrentUser, selectCurrentUsername } from '../../services
             <Link to="/events">Events</Link>
             </li>
             <li>
-              <Link to="/events/create">Create</Link>
+              <Link to="/create">Create</Link>
             </li>
             </>
           }
@@ -83,7 +83,7 @@ import { logout, selectCurrentUser, selectCurrentUsername } from '../../services
                   Events
                 </DropdownMenuItem>
                 </Link>
-                <Link to="/events/create">
+                <Link to="/create">
                 <DropdownMenuItem>
                   Create
                 </DropdownMenuItem>
