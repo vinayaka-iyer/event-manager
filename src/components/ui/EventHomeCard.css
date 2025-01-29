@@ -1,0 +1,14 @@
+.event-card-container{
+    padding:10px;
+    display: flex;
+    flex-direction: column;
+    border-width: 2px;
+    border-color: black;
+    border-radius: 5px;
+}
+
+.event-card-body{
+    display: flex;
+    flex-direction: row;
+    justify-content:space-between;
+}

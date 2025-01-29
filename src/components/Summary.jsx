@@ -1,5 +1,5 @@
 import React from "react";
-import { useSelector } from "react-redux";
+import { useDispatch, useSelector } from "react-redux";
 import { Card, CardContent } from "@/components/ui/card";
 import {
   Table,
@@ -17,6 +17,13 @@ const Summary = () => {
   const navigate = useNavigate();
   const formData = useSelector((state) => state.form.formData);
   console.log(formData);
+
+  const dispatch = useDispatch();
+
+  const addEvent = () => {
+    dispatch(addEvent(formData));
+    navigate("/home");
+  }
 
   return (
     <div>
@@ -55,7 +62,7 @@ const Summary = () => {
       </div>
       <div className="mt-4 mr-96 mx-auto flex justify-end">
         <div className="flex gap-12">
-          <Button className="w-48 h-10">Create Event</Button>
+          <Button onClick={addEvent} className="w-48 h-10">Create Event</Button>
         </div>
       </div>
     </div>
