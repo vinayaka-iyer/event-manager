@@ -12,6 +12,7 @@ import {
 import GuestList from "./GuestList";
 import { Button } from "./ui/button";
 import { useNavigate } from "react-router-dom";
+import { addEvent } from "@/services/formSlice";
 
 const Summary = () => {
   const navigate = useNavigate();
@@ -20,9 +21,13 @@ const Summary = () => {
 
   const dispatch = useDispatch();
 
-  const addEvent = () => {
-    dispatch(addEvent(formData));
-    navigate("/home");
+  const saveEvent = () => {
+    dispatch(addEvent({
+      ...formData,
+      date_from: formData.date_from.toISOString(),
+      date_to: formData.date_to.toISOString()
+    }));
+    navigate("/");
   }
 
   return (
@@ -62,7 +67,7 @@ const Summary = () => {
       </div>
       <div className="mt-4 mr-96 mx-auto flex justify-end">
         <div className="flex gap-12">
-          <Button onClick={addEvent} className="w-48 h-10">Create Event</Button>
+          <Button onClick={saveEvent} className="w-48 h-10">Create Event</Button>
         </div>
       </div>
     </div>

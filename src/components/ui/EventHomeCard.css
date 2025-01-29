@@ -5,10 +5,14 @@
     border-width: 2px;
     border-color: black;
     border-radius: 5px;
+    justify-content: space-between;
+    margin-bottom: 2%;
 }
 
 .event-card-body{
     display: flex;
     flex-direction: row;
     justify-content:space-between;
+    padding-top: 5%;
 }
+

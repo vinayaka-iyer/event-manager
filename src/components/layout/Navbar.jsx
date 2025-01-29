@@ -33,7 +33,7 @@ import { logout, selectCurrentUser, selectCurrentUsername } from '../../services
           {user &&
           <>
             <li>
-            <Link to="/events">Events</Link>
+            <Link to="/">Home</Link>
             </li>
             <li>
               <Link to="/create">Create</Link>
