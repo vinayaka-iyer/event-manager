@@ -1,5 +1,5 @@
 import React from "react";
-import { cn } from "@/lib/utils"; // Utility function for conditional class names if needed
+import { cn } from "@/lib/utils";
 
 const CustomCard = ({ icon: Icon, heading, description }) => {
   return (

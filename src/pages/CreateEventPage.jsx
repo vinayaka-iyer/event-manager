@@ -1,10 +1,9 @@
 import React from "react";
-import CreateEventForm from "../components/CreateEventForm";
-import Page1 from "@/components/Page1";
+import Page1 from "@/components/EventForm/Page1";
 
 const CreateEventPage = () => {
   return (
-    <div>
+    <div className="p-4">
       <Page1 />
     </div>
   );

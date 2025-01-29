@@ -1,4 +1,9 @@
-import { BrowserRouter as Router, Routes, Route, useLocation } from "react-router-dom";
+import {
+  BrowserRouter as Router,
+  Routes,
+  Route,
+  useLocation,
+} from "react-router-dom";
 import HomePage from "@/pages/HomePage";
 import LoginPage from "@/pages/LoginPage";
 import RegisterPage from "@/pages/RegisterPage";
@@ -10,8 +15,8 @@ import LandingPage from "@/pages/LandingPage";
 import { useSelector } from "react-redux";
 import { selectCurrentUser } from "@/services/auth/authSlice";
 import CreateEventPage from "@/pages/CreateEventPage";
-import Page2 from "@/components/Page2";
-import Summary from "@/components/Summary";
+import Page2 from "@/components/EventForm/Page2";
+import Summary from "@/components/EventForm/Summary";
 
 const AppRoutes = () => {
   const location = useLocation(); // Get current route

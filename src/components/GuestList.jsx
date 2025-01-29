@@ -3,7 +3,7 @@ import { Card } from "@/components/ui/card";
 
 function GuestList({ guestNames }) {
   return (
-    <div className="flex justify-center ml-4 md:w-1/6 mt-10">
+    <div className="flex justify-center ml-4 md:w-1/6 mt-10 hidden md:block">
       <Card className="shadow-lg bg-white rounded-lg overflow-hidden w-full">
         <div className="p-4">
           <h3 className="text-xl font-semibold text-gray-800 mb-4">

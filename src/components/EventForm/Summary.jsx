@@ -9,8 +9,8 @@ import {
   TableHeader,
   TableRow,
 } from "@/components/ui/table";
-import GuestList from "./GuestList";
-import { Button } from "./ui/button";
+import GuestList from "../GuestList";
+import { Button } from "../ui/button";
 import { useNavigate } from "react-router-dom";
 import { addEvent } from "@/services/formSlice";
 
@@ -22,18 +22,20 @@ const Summary = () => {
   const dispatch = useDispatch();
 
   const saveEvent = () => {
-    dispatch(addEvent({
-      ...formData,
-      date_from: formData.date_from.toISOString(),
-      date_to: formData.date_to.toISOString()
-    }));
+    dispatch(
+      addEvent({
+        ...formData,
+        date_from: formData.date_from.toISOString(),
+        date_to: formData.date_to.toISOString(),
+      })
+    );
     navigate("/");
-  }
+  };
 
   return (
     <div>
-      <div className="flex gap-24 justify-center">
-        <Card className="w-2/5 mt-10 shadow-lg">
+      <div className="flex gap-24 justify-center p-5">
+        <Card className="md:w-2/5 mt-10 shadow-lg ">
           <CardContent>
             <h2 className="text-xl font-semibold mb-4">Summary</h2>
             <Table>
@@ -65,9 +67,11 @@ const Summary = () => {
         </Card>
         <GuestList guestNames={formData.guest_names} />
       </div>
-      <div className="mt-4 mr-96 mx-auto flex justify-end">
+      <div className="mt-4 sm:mr-96 mx-auto flex justify-end mr-12">
         <div className="flex gap-12">
-          <Button onClick={saveEvent} className="w-48 h-10">Create Event</Button>
+          <Button onClick={saveEvent} className="w-48 h-10">
+            Create Event
+          </Button>
         </div>
       </div>
     </div>

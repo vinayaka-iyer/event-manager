@@ -1,16 +1,15 @@
 import EventHomeCard from "@/components/ui/EventHomeCard";
-import "./EventCardsContainer.css";
 
-const EventCardsContainer = ({events = []}) => {
-    return (
-        <>
-            <div className="events-container">
-                {events.map((event, index) => (
-                    <EventHomeCard key={index} event={event} />
-                ))}
-            </div>
-        </>
-    )
-}
+const EventCardsContainer = ({ events = [] }) => {
+  return (
+    <>
+      <div className="p-4 flex flex-col justify-center xl:grid xl:grid-cols-3 ">
+        {events.map((event, index) => (
+          <EventHomeCard key={index} event={event} />
+        ))}
+      </div>
+    </>
+  );
+};
 
 export default EventCardsContainer;

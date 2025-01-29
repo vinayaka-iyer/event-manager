@@ -24,11 +24,11 @@ import {
 import { Textarea } from "@/components/ui/textarea";
 import { TagsInput } from "@/components/ui/tags-input";
 import { Checkbox } from "@/components/ui/checkbox";
-import FileUpload from "./FileUpload";
+import FileUpload from "../utility/FileUpload";
 import { useDispatch } from "react-redux";
 import { useNavigate } from "react-router-dom";
-import { updateFormData } from "../services/formSlice";
-import GuestList from "./GuestList";
+import { updateFormData } from "../../services/formSlice";
+import GuestList from "../GuestList";
 
 const formSchema = z.object({
   guest_names: z
@@ -65,13 +65,13 @@ const Page2 = () => {
 
   return (
     <>
-      <div className="flex justify-center w-full">
+      <div className="md:flex md:flex-row flex-col justify-center w-full">
         <Form {...form}>
           <form
             onSubmit={form.handleSubmit(onSubmit)}
-            className="space-y-8 w-2/5 py-10"
+            className="space-y-8 md:w-2/5 px-5 py-10"
           >
-            <div className="grid grid-cols-12 gap-4">
+            <div className="md:grid md:grid-cols-12 md:gap-4 flex flex-col justify-center">
               <div className="col-span-6">
                 <FormField
                   control={form.control}

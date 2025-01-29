@@ -37,7 +37,7 @@ const PricingPage = () => {
       <h1 className="text-7xl font-bold text-center my-5">
         Choose a plan that fits your needs
       </h1>
-      <div className="xl:grid xl:grid-cols-3 flex flex-col gap-6 max-w-3/5 mx-auto mt-24">
+      <div className="xl:grid xl:grid-cols-3 flex flex-col gap-6 max-w-3/5 mx-auto mt-12">
         {pricingPlans.map((plan, index) => (
           <PriceCard
             key={index}
