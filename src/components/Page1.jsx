@@ -39,16 +39,30 @@ import { useDispatch } from "react-redux";
 import { useNavigate } from "react-router-dom";
 import { updateFormData } from "../services/formSlice";
 
-const formSchema = z.object({
-  event_name: z.string().min(1).max(100),
-  date_from: z.coerce.date(),
-  date_to: z.coerce.date(),
-  timing_from: z.string(),
-  timing_to: z.string(),
-  mode: z.string(),
-  venue: z.string().min(1),
-  description: z.string().optional(),
-});
+const timeRegex = /^([0-9]|1[0-9]|2[0-3]):[0-5][0-9]$/;
+
+const formSchema = z
+  .object({
+    event_name: z.string().min(1).max(100),
+    date_from: z.coerce.date(),
+    date_to: z.coerce.date(),
+    timing_from: z
+      .string()
+      .regex(timeRegex, "Invalid time format (H:MM or HH:MM)"),
+    timing_to: z
+      .string()
+      .regex(timeRegex, "Invalid time format (H:MM or HH:MM)"),
+    mode: z.enum(
+      ["in-person", "virtual"],
+      "Please select the mode of the event"
+    ),
+    venue: z.string().min(1),
+    description: z.string().optional(),
+  })
+  .refine((data) => data.date_from <= data.date_to, {
+    message: "Date from must be earlier than Date to",
+    path: ["date_from"],
+  });
 
 const Page1 = () => {
   const { register, handleSubmit } = useForm();
@@ -229,9 +243,8 @@ const Page1 = () => {
                   </SelectTrigger>
                 </FormControl>
                 <SelectContent>
-                  <SelectItem value="m@example.com">m@example.com</SelectItem>
-                  <SelectItem value="m@google.com">m@google.com</SelectItem>
-                  <SelectItem value="m@support.com">m@support.com</SelectItem>
+                  <SelectItem value="in-person">In-person</SelectItem>
+                  <SelectItem value="virtual">Virtual</SelectItem>
                 </SelectContent>
               </Select>
 

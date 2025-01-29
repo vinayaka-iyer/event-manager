@@ -16,6 +16,7 @@ import { useNavigate } from "react-router-dom";
 const Summary = () => {
   const navigate = useNavigate();
   const formData = useSelector((state) => state.form.formData);
+  console.log(formData);
 
   const dispatch = useDispatch();
 
@@ -44,7 +45,13 @@ const Summary = () => {
                       <TableCell className="font-medium capitalize">
                         {key}
                       </TableCell>
-                      <TableCell>{value}</TableCell>
+                      <TableCell>
+                        {key === "files"
+                          ? value
+                            ? value[0].name
+                            : "N/A"
+                          : `${value}`}
+                      </TableCell>
                     </TableRow>
                   ))}
               </TableBody>
