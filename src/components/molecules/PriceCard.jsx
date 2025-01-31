@@ -1,6 +1,6 @@
 import React from "react";
-import { Button } from "@/components/ui/button";
-import { Card, CardContent } from "@/components/ui/card";
+import { Button } from "@/components/atoms/button";
+import { Card, CardContent } from "@/components/atoms/card";
 import { Check } from "lucide-react";
 
 const PriceCard = ({ title, price, features }) => {

@@ -1,5 +1,5 @@
 import React from "react";
-import Page1 from "@/components/EventForm/Page1";
+import Page1 from "@/components/organisms/Page1";
 
 const CreateEventPage = () => {
   return (

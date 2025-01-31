@@ -1,7 +1,7 @@
 import { configureStore } from "@reduxjs/toolkit";
 import authReducer from "../services/auth/authSlice";
-import { apiSlice } from "../services/apiSlice";
-import formReducer from "../services/formSlice";
+import { apiSlice } from "../services/api/apiSlice";
+import formReducer from "../services/events/formSlice";
 
 const store = configureStore({
   reducer: {

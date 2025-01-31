@@ -1,4 +1,5 @@
 import React from "react";
+import { Link } from "react-router-dom";
 
 const Logo = () => {
   return (
@@ -12,7 +13,7 @@ const Logo = () => {
         marginBottom: "20px", // Adds space below the logo
       }}
     >
-      EventEase
+      <Link to="/"> EventEase</Link>
     </div>
   );
 };

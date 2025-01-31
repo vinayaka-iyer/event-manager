@@ -5,10 +5,10 @@ import {
   DropdownMenuContent,
   DropdownMenuItem,
   DropdownMenuTrigger,
-} from "@/components/ui/dropdown-menu";
+} from "@/components/atoms/dropdown-menu";
 import { Menu } from "lucide-react";
-import { Card } from "@/components/ui/card";
-import { Button } from "@/components/ui/button";
+import { Card } from "@/components/atoms/card";
+import { Button } from "@/components/atoms/button";
 import { useDispatch, useSelector } from "react-redux";
 import {
   logout,

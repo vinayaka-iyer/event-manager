@@ -1,5 +1,5 @@
 import React from "react";
-import CustomCard from "@/components/CustomCard";
+import CustomCard from "@/components/molecules/CustomCard";
 
 const dummyData = [
   {

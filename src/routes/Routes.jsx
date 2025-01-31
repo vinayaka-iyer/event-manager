@@ -10,13 +10,13 @@ import RegisterPage from "@/pages/RegisterPage";
 import SolutionsPage from "@/pages/SolutionsPage";
 import PricingPage from "@/pages/PricingPage";
 
-import Navbar from "@/components/layout/Navbar";
+import Navbar from "@/components/molecules/Navbar";
 import LandingPage from "@/pages/LandingPage";
 import { useSelector } from "react-redux";
 import { selectCurrentUser } from "@/services/auth/authSlice";
 import CreateEventPage from "@/pages/CreateEventPage";
-import Page2 from "@/components/EventForm/Page2";
-import Summary from "@/components/EventForm/Summary";
+import Page2 from "@/components/organisms/Page2";
+import Summary from "@/components/organisms/Summary";
 
 const AppRoutes = () => {
   const location = useLocation(); // Get current route

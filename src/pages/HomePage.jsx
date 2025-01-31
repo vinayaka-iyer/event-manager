@@ -1,7 +1,7 @@
-import { selectAllEvents } from "@/services/formSlice";
+import { selectAllEvents } from "@/services/events/formSlice";
 import { useSelector } from "react-redux";
 import React from "react";
-import EventCardsContainer from "@/components/layout/EventCardsContainer";
+import EventCardsContainer from "@/components/organisms/EventCardsContainer";
 
 const HomePage = () => {
   const forms = useSelector(selectAllEvents);

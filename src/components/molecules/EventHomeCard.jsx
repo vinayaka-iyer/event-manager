@@ -1,4 +1,4 @@
-import { Button } from "@/components/ui/button";
+import { Button } from "@/components/atoms/button";
 import RightArrow from "@/assets/right-arrow.svg";
 
 const EventHomeCard = ({ event }) => {

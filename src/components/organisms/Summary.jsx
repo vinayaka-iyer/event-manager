@@ -1,6 +1,6 @@
 import React from "react";
 import { useDispatch, useSelector } from "react-redux";
-import { Card, CardContent } from "@/components/ui/card";
+import { Card, CardContent } from "@/components/atoms/card";
 import {
   Table,
   TableBody,
@@ -8,11 +8,11 @@ import {
   TableHead,
   TableHeader,
   TableRow,
-} from "@/components/ui/table";
-import GuestList from "../GuestList";
-import { Button } from "../ui/button";
+} from "@/components/atoms/table";
+import GuestList from "../molecules/GuestList";
+import { Button } from "../atoms/button";
 import { useNavigate } from "react-router-dom";
-import { addEvent } from "@/services/formSlice";
+import { addEvent } from "@/services/events/formSlice";
 
 const Summary = () => {
   const navigate = useNavigate();

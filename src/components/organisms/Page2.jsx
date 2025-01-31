@@ -3,7 +3,7 @@ import { toast } from "sonner";
 import { useForm, Controller } from "react-hook-form";
 import { zodResolver } from "@hookform/resolvers/zod";
 import * as z from "zod";
-import { Button } from "@/components/ui/button";
+import { Button } from "@/components/atoms/button";
 import {
   Form,
   FormControl,
@@ -12,7 +12,7 @@ import {
   FormItem,
   FormLabel,
   FormMessage,
-} from "@/components/ui/form";
+} from "@/components/atoms/form";
 
 import {
   Select,
@@ -20,15 +20,15 @@ import {
   SelectItem,
   SelectTrigger,
   SelectValue,
-} from "@/components/ui/select";
-import { Textarea } from "@/components/ui/textarea";
-import { TagsInput } from "@/components/ui/tags-input";
-import { Checkbox } from "@/components/ui/checkbox";
-import FileUpload from "../utility/FileUpload";
+} from "@/components/atoms/select";
+import { Textarea } from "@/components/atoms/textarea";
+import { TagsInput } from "@/components/atoms/tags-input";
+import { Checkbox } from "@/components/atoms/checkbox";
+import FileUpload from "../molecules/FileUpload";
 import { useDispatch } from "react-redux";
 import { useNavigate } from "react-router-dom";
-import { updateFormData } from "../../services/formSlice";
-import GuestList from "../GuestList";
+import { updateFormData } from "../../services/events/formSlice";
+import GuestList from "../molecules/GuestList";
 
 const formSchema = z.object({
   guest_names: z

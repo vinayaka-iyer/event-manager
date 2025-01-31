@@ -3,8 +3,8 @@ import { toast } from "sonner";
 import { useForm, Controller } from "react-hook-form";
 import { zodResolver } from "@hookform/resolvers/zod";
 import * as z from "zod";
-import { cn } from "@/lib/utils";
-import { Button } from "@/components/ui/button";
+import { cn } from "@/utils/utils";
+import { Button } from "@/components/atoms/button";
 import {
   Form,
   FormControl,
@@ -13,15 +13,15 @@ import {
   FormItem,
   FormLabel,
   FormMessage,
-} from "@/components/ui/form";
-import { Input } from "@/components/ui/input";
+} from "@/components/atoms/form";
+import { Input } from "@/components/atoms/input";
 import { format } from "date-fns";
 import {
   Popover,
   PopoverContent,
   PopoverTrigger,
-} from "@/components/ui/popover";
-import { Calendar } from "@/components/ui/calendar";
+} from "@/components/atoms/popover";
+import { Calendar } from "@/components/atoms/calendar";
 import { Calendar as CalendarIcon } from "lucide-react";
 import {
   Select,
@@ -29,15 +29,15 @@ import {
   SelectItem,
   SelectTrigger,
   SelectValue,
-} from "@/components/ui/select";
-import { Textarea } from "@/components/ui/textarea";
-import { TagsInput } from "@/components/ui/tags-input";
-import { Checkbox } from "@/components/ui/checkbox";
+} from "@/components/atoms/select";
+import { Textarea } from "@/components/atoms/textarea";
+import { TagsInput } from "@/components/atoms/tags-input";
+import { Checkbox } from "@/components/atoms/checkbox";
 import { CloudUpload, Paperclip } from "lucide-react";
-import FileUpload from "../utility/FileUpload";
+import FileUpload from "../molecules/FileUpload";
 import { useDispatch } from "react-redux";
 import { useNavigate } from "react-router-dom";
-import { updateFormData } from "../../services/formSlice";
+import { updateFormData } from "../../services/events/formSlice";
 
 const timeRegex = /^([0-9]|1[0-9]|2[0-3]):[0-5][0-9]$/;
 

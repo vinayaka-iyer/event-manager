@@ -1,28 +1,31 @@
 import React, { useState } from "react";
 import { Link, useNavigate } from "react-router-dom";
-import { Button } from "@/components/ui/button";
-import { Input } from "@/components/ui/input";
+import { Button } from "@/components/atoms/button.jsx";
+import { Input } from "@/components/atoms/input.jsx";
 import { FaGoogle, FaFacebook } from "react-icons/fa";
 import bgimg from "@/assets/BG.jpeg";
-import Logo from "@/components/ui/Logo";
+import Logo from "@/components/atoms/Logo.jsx";
 
 import { register } from "../services/auth/authSlice.js";
 import { useRegisterMutation } from "../services/auth/authApiSlice";
 import { useDispatch } from "react-redux";
 
 const RegisterPage = () => {
-  const [credentials, setCredentials] = useState({ username: '', password: '' });
+  const [credentials, setCredentials] = useState({
+    username: "",
+    password: "",
+  });
   const dispatch = useDispatch();
-  const navigate = useNavigate()
+  const navigate = useNavigate();
 
-  const [registerMutation, {isLoading}] = useRegisterMutation()
+  const [registerMutation, { isLoading }] = useRegisterMutation();
 
   const handleSubmit = async (e) => {
     e.preventDefault();
     try {
       // await registerUser({ username, password });
-      const data = await registerMutation( credentials ).unwrap()
-      dispatch(register(credentials))
+      const data = await registerMutation(credentials).unwrap();
+      dispatch(register(credentials));
       alert("User registered successfully");
       navigate("/");
     } catch (error) {
@@ -48,49 +51,60 @@ const RegisterPage = () => {
             <label htmlFor="username" className="text-white block mb-1">
               Name:
             </label>
-            <Input type="text" 
-                   id="username" 
-                   name="username" 
-                   value={credentials.username}
-                   onChange={(e) => setCredentials({ ...credentials, username: e.target.value })}
-                   placeholder="Enter your name" 
-                   className="w-full" />
+            <Input
+              type="text"
+              id="username"
+              name="username"
+              value={credentials.username}
+              onChange={(e) =>
+                setCredentials({ ...credentials, username: e.target.value })
+              }
+              placeholder="Enter your name"
+              className="w-full"
+            />
           </div>
 
           <div>
             <label htmlFor="phone" className="text-white block mb-1">
               Phone:
             </label>
-            <Input type="tel" 
-                   id="phone" 
-                   name="phone" 
-                   placeholder="Enter your phone" 
-                   className="w-full" />
+            <Input
+              type="tel"
+              id="phone"
+              name="phone"
+              placeholder="Enter your phone"
+              className="w-full"
+            />
           </div>
 
           <div>
             <label htmlFor="email" className="text-white block mb-1">
               Email:
             </label>
-            <Input type="email" 
-                   id="email" 
-                   name="email" 
-                   placeholder="Enter your email" 
-                   className="w-full" />
+            <Input
+              type="email"
+              id="email"
+              name="email"
+              placeholder="Enter your email"
+              className="w-full"
+            />
           </div>
 
           <div>
-            <label htmlFor="password" 
-                   className="text-white block mb-1">
+            <label htmlFor="password" className="text-white block mb-1">
               Password:
             </label>
-            <Input type="password" 
-                   id="password" 
-                   name="password" 
-                   value={credentials.password}
-                   onChange={(e) => setCredentials({ ...credentials, password: e.target.value })}
-                   placeholder="Enter your password" 
-                   className="w-full" />
+            <Input
+              type="password"
+              id="password"
+              name="password"
+              value={credentials.password}
+              onChange={(e) =>
+                setCredentials({ ...credentials, password: e.target.value })
+              }
+              placeholder="Enter your password"
+              className="w-full"
+            />
           </div>
 
           <Button className="w-full bg-black text-white py-2">Register</Button>

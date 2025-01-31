@@ -1,4 +1,4 @@
-import EventHomeCard from "@/components/ui/EventHomeCard";
+import EventHomeCard from "@/components/molecules/EventHomeCard";
 
 const EventCardsContainer = ({ events = [] }) => {
   return (

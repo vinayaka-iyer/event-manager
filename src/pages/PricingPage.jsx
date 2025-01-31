@@ -1,4 +1,4 @@
-import PriceCard from "@/components/PriceCard";
+import PriceCard from "@/components/molecules/PriceCard";
 import React from "react";
 
 const pricingPlans = [

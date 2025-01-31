@@ -1,6 +1,6 @@
-import { Badge } from "@/components/ui/badge";
-import { Input } from "@/components/ui/input";
-import { cn } from "@/lib/utils";
+import { Badge } from "@/components/atoms/badge";
+import { Input } from "@/components/atoms/input";
+import { cn } from "@/utils/utils";
 import { X as RemoveIcon } from "lucide-react";
 import React from "react";
 
