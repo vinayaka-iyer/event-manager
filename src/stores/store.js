@@ -6,7 +6,7 @@ import formReducer from "../services/events/formSlice";
 const store = configureStore({
   reducer: {
     [apiSlice.reducerPath]: apiSlice.reducer,
-    auth: authReducer, // Register the auth slice
+    auth: authReducer,
     form: formReducer,
   },
   middleware: (getDefaultMiddleware) =>
